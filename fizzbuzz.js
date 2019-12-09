@@ -18,12 +18,16 @@ function fizzbuzz() {
         else if (i%5==0) {
             string='Buzz'
         }
+        else if (i%11==0) {
+            string='Bong'
+        }
         if (i%7==0) {
             if (string==i.toString()) {
                 string='Bang'
             }
             else string+='Bang'
         }
+        
 
         console.log(string)
 
