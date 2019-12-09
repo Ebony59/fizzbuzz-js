@@ -27,6 +27,20 @@ function fizzbuzz() {
             }
             else string+='Bang'
         }
+        if (i%13==0) {
+            if (string==i.toString()) {
+                string='Fezz'
+            }
+            else {
+                ind=string.indexOf('B')
+                if (ind==-1) {
+                    string+='Fezz'
+                }
+                else {
+                    string=string.slice(0,ind)+"Fezz"+string.slice(ind)
+                }
+            }
+        }
         
 
         console.log(string)
