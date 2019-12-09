@@ -7,7 +7,7 @@ function fizzbuzz() {
 
     // Put your code here...
     var i
-    for (i=1;i<=100;i++){
+    for (i=1;i<=500;i++){
         var array=[i.toString()]
         if (i%15==0) {
             array=['Fizz','Buzz']
@@ -45,6 +45,9 @@ function fizzbuzz() {
                     array.push('Fezz')
                 }
             }
+        }
+        if (i%17==0) {
+            array=array.reverse()
         }
         
    
