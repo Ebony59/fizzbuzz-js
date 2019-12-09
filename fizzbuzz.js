@@ -8,42 +8,47 @@ function fizzbuzz() {
     // Put your code here...
     var i
     for (i=1;i<=100;i++){
-        var string=i.toString()
+        var array=[i.toString()]
         if (i%15==0) {
-            string='FizzBuzz'
+            array=['Fizz','Buzz']
         }
         else if (i%3==0) {
-            string='Fizz'
+            array=['Fizz']
         }
         else if (i%5==0) {
-            string='Buzz'
+            array=['Buzz']
         }
         else if (i%11==0) {
-            string='Bong'
+           array=['Bong']
         }
         if (i%7==0) {
-            if (string==i.toString()) {
-                string='Bang'
+            if (array[0]==i.toString()) {
+                array=['Bang']
             }
-            else string+='Bang'
+            else array.push('Bang')
         }
         if (i%13==0) {
-            if (string==i.toString()) {
-                string='Fezz'
+            if (array[0]==i.toString()) {
+               array=['Fezz']
             }
             else {
-                ind=string.indexOf('B')
-                if (ind==-1) {
-                    string+='Fezz'
+                let has_B=false
+                for (let j=0;j<=array.length;j++) {
+                    if (array[j][0]='B') {
+                        if (j==0) {j=1}
+                        array.splice(j-1,0,'Fezz')
+                        has_B=true
+                        break
+                    }
                 }
-                else {
-                    string=string.slice(0,ind)+"Fezz"+string.slice(ind)
+                if (has_B==false) {
+                    array.push('Fezz')
                 }
             }
         }
         
-
-        console.log(string)
+   
+        console.log(array.join(''))
 
     }
 
