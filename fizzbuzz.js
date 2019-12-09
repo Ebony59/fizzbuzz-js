@@ -1,13 +1,13 @@
 
 
 // Here, we create our main function.
-function fizzbuzz() {
+function fizzbuzz(upper) {
     
     console.log('Welcome to FizzBuzz!');
 
     // Put your code here...
     var i
-    for (i=1;i<=500;i++){
+    for (i=1;i<=upper;i++){
         var array=[i.toString()]
         if (i%15==0) {
             array=['Fizz','Buzz']
@@ -50,6 +50,7 @@ function fizzbuzz() {
             array=array.reverse()
         }
         
+        
    
         console.log(array.join(''))
 
@@ -61,4 +62,8 @@ function fizzbuzz() {
 }
 
 // Now we run the main function...
-fizzbuzz();
+
+
+let rlSync = require('readline-sync');
+let upper = rlSync.question("What's the upper bound of FizzBuzz?\n");
+fizzbuzz(upper);
